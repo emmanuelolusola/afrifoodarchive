@@ -1,3 +1,20 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+
+body {
+    background-color: #FFFFC5;
+    font-family: "Inter", serif;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 50px;
+}
+
+@media (max-width: 768px) { 
+    body {
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 25px;
+    }
+}
