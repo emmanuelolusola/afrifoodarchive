@@ -1,37 +1,46 @@
 import { useState, useEffect } from 'react';
 import base from '../../api/base';
+import FoodCard from '../../components/FoodCard/FoodCard';
 
 const FoodArchive = () => {
   const [foods, setFoods] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    base('Foods')
-      .select({ view: 'Grid view' })
-      .eachPage(
-        (records, fetchNextPage) => {
-          setFoods((prevFoods) => [...prevFoods, ...records]);
-          fetchNextPage();
-        },
-        (err) => {
-          if (err) {
-            console.error('Error fetching data:', err);
-          }
-        }
-      );
+    const fetchData = async () => {
+      try {
+        const records = await base('Foods').select({ view: 'Grid view' }).all();
+        setFoods(records);
+      } catch (err) {
+        setError(err.message);
+        console.error('Error fetching data:', err);
+      }
+    };
+
+    fetchData();
   }, []);
 
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
-    <div>
-      <h1>Food Archive</h1>
-      <ul>
-        {foods.map((food) => (
-          <li key={food.ID}>
-            {food.fields.Name}
-            {food.fields.Category}
-          </li>
-    
-        ))}
-      </ul>
+    <div className="p-0 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-10">
+      {foods.map((food) => {
+        const { Name, Youtube, Category, Description, Image, Demography } = food.fields;
+
+        return (
+          <FoodCard
+            key={food.id} // Use food.id instead of food.ID
+            name={Name || 'No Name Available'} 
+            youtube={Youtube || '#'} 
+            category={Category || 'Uncategorized'}
+            description={Description || 'No description provided'}
+            image={Image?.[0]?.url || '/placeholder.jpg'} 
+            demography={Demography || 'Not specified'}
+          />
+        );
+      })}
     </div>
   );
 };
