@@ -1,3 +1,4 @@
+import Filter from "../../components/filter/Filter";
 import FoodArchive from "../../components/FoodArchive/FoodArchive";
 import Header from "../../components/header/Header";
 import NavBar from "../../components/NavBar/NavBar";
@@ -9,6 +10,7 @@ const Home = () => {
       <NavBar />
       <Header />
       <SearchBar />
+      <Filter />
       <FoodArchive />
     </div>
   );
