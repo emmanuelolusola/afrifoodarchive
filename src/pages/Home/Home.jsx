@@ -1,3 +1,4 @@
+import FoodArchive from "../../components/FoodArchive/FoodArchive";
 import Header from "../../components/header/Header";
 import NavBar from "../../components/NavBar/NavBar";
 import SearchBar from "../../components/searchBar/SearchBar";
@@ -8,6 +9,7 @@ const Home = () => {
       <NavBar />
       <Header />
       <SearchBar />
+      <FoodArchive />
     </div>
   );
 };
