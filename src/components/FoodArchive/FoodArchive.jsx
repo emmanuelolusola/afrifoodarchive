@@ -31,7 +31,7 @@ const FoodArchive = () => {
 
         return (
           <FoodCard
-            key={food.id} // Use food.id instead of food.ID
+            key={food.id} 
             name={Name || 'No Name Available'} 
             youtube={Youtube || '#'} 
             category={Category || 'Uncategorized'}
