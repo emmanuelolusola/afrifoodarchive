@@ -25,7 +25,7 @@ const FoodCard = ({
         </div>
       </div>
       <div className="px-2 lg:px-4 py-2 h-[35%] bg-[#FFDAA8]">
-        <p className="font-medium text-base md:text-2xl">{name}</p>
+        <p className="font-medium text-base md:text-xl">{name}</p>
         <p className="text-[#777777] text-[10px] md:text-sm">{category}</p>
         <div className="flex justify-between items-center pt-1 lg:pt-4">
           {isHeartFilled ? (
