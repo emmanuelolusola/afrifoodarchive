@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import base from "../../api/base";
 import FoodCard from "../../components/FoodCard/FoodCard";
-import Filter from "../../components/Filter/Filter";
+import Filter from "../../components/filter/Filter";
 
 const FoodArchive = ({ searchQuery }) => {
   const [foods, setFoods] = useState([]);
