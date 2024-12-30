@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import Filter from "../../components/filter/Filter";
 import FoodArchive from "../../components/FoodArchive/FoodArchive";
 import Header from "../../components/header/Header";
 import NavBar from "../../components/NavBar/NavBar";
@@ -24,7 +23,6 @@ const Home = () => {
       <NavBar />
       <Header />
       <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      {/* <Filter /> */}
       <FoodArchive searchQuery={searchQuery} />
     </div>
   );
