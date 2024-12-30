@@ -17,7 +17,7 @@ const FoodCard = ({
   };
 
   return (
-    <div className="cursor-pointer h-[250px] md:h-[340px] mt-4 flex flex-col gap-0 text-sm border p-0 border-[#FF0800] w-[100%] md:w-[100%] rounded-xl overflow-hidden">
+    <div className="cursor-pointer h-[250px] md:h-[320px] mt-4 flex flex-col gap-0 text-sm border p-0 border-[#FF0800] w-[100%] md:w-[100%] rounded-xl overflow-hidden">
       <div className="relative group h-[65%] w-full">
         <img className="h-full w-full object-cover" src={image} alt={name} />
         <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -30,21 +30,21 @@ const FoodCard = ({
         <div className="flex justify-between items-center pt-1 lg:pt-4">
           {isHeartFilled ? (
             <FaHeart
-              className="w-[16px] h-[16px]  md:w-[24px] md:h-[24px]"
+              className="w-[16px] h-[16px]  md:w-[22px] md:h-[22px]"
               color="#FF0800"
               onClick={toggleHeart}
               style={{ cursor: "pointer" }}
             />
           ) : (
             <FaRegHeart
-              className="w-[16px] h-[16px] md:w-[24px] md:h-[24px]"
+              className="w-[16px] h-[16px] md:w-[22px] md:h-[22px]"
               color="#FF0800"
               onClick={toggleHeart}
               style={{ cursor: "pointer" }}
             />
           )}
 
-          <button className="bg-[#FF0800] text-[#FFF157] px-3 md:px-6 text-[10px] md:text-base py-0 lg:py-1 rounded-3xl">
+          <button className="bg-[#FF0800] text-[#FFF157] px-3 md:px-6 text-[10px] md:text-sm py-0 lg:py-1 rounded-3xl">
             View
           </button>
         </div>

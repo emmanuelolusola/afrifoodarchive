@@ -24,7 +24,7 @@ const Home = () => {
       <NavBar />
       <Header />
       <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <Filter />
+      {/* <Filter /> */}
       <FoodArchive searchQuery={searchQuery} />
     </div>
   );
