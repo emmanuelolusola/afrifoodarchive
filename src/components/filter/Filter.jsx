@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import filterIcon from "../../assets/filter.svg";
 import { FILTERBY } from "../../utils/Data";
 
-const Filter = () => {
+const Filter = ({ onSortToggle, isSorted }) => {
   const [selectedFilter, setSelectedFilter] = useState(null);
 
   const handleFilterClick = (filterName) => {
@@ -51,8 +51,10 @@ const Filter = () => {
             ))}
           </div>
         </div>
-        <div className="px-4 py-2 border border-[#FF0800] rounded-full cursor-pointer">
-          <p className="font-medium text-[10px] lg:text-[16px]">A - Z</p>
+        <div onClick={onSortToggle}  className={`px-4 py-2 border border-[#FF0800] rounded-full cursor-pointer ${
+          isSorted && "bg-red-500 text-[#FFF157]" 
+        }`}>
+          <p  className='font-medium text-[10px] lg:text-[16px] '>A - Z</p>
         </div>
       </div>
       <div className="flex gap-2 lg:flex-wrap px-0 lg:px-4 overflow-x-auto">
