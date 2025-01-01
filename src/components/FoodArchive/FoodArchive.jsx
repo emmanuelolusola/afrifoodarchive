@@ -70,13 +70,13 @@ const FoodArchive = ({ searchQuery }) => {
             {Object.keys(groupedFoods).map((letter) => (
               <div key={letter}>
                 {/* Render letter as demarcation */}
-                <div className="flex gap-5 md:gap-10 items-center my-5">
-                  <h2 className="text-[24px] md:text-[40px] font-bold text-[#777777]">{letter}</h2>
+                <div className="flex gap-5 lg:gap-10 items-center mt-10">
+                  <h2 className="text-[24px] lg:text-[40px] font-bold text-[#777777]">{letter}</h2>
                   <div className="h-[1px] w-full bg-[#777777]"></div>
                 </div>
 
                 {/* Render food items under each letter */}
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-2 md:gap-5">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-2 lg:gap-5">
                   {groupedFoods[letter].map((food) => {
                     const { Name, Youtube, Category, Description, Image, Demography } = food.fields;
 
@@ -99,7 +99,7 @@ const FoodArchive = ({ searchQuery }) => {
         )}
         {/* If not sorted, just show the foods as a simple list */}
         {!isSorted && (
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-2 md:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-5">
             {filteredFoods.map((food) => {
               const { Name, Youtube, Category, Description, Image, Demography } = food.fields;
 
