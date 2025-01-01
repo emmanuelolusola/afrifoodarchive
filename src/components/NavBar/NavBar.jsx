@@ -16,7 +16,7 @@ const NavBar = () => {
         <li>
           <Link
             to="/"
-            className={location.pathname === "/" ? "text-red-500" : ""}
+            className={`${location.pathname === "/" ? "text-red-500" : ""} md:block hidden`}
           >
             Foods
           </Link>
