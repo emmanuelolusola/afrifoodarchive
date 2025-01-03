@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div>
       <NavBar />
-      <div className="py-20 flex gap-10 lg:gap-0 lg:flex-row  flex-col ">
+      <div className="py-20 flex gap-10 lg:gap-0 lg:flex-row  flex-col px-[20px] md:px-[150px]">
         <div className="w-full lg:w-[65%] lg:pr-40">
           <h1 className="text-[24px] lg:text-[32px] text-[#1D1D1F] pb-6 font-medium">About</h1>
           <div className="flex flex-col gap-6 md:gap-10">
