@@ -78,13 +78,22 @@ const FoodArchive = ({ searchQuery }) => {
             <>
               {Object.keys(groupedFoods).map((letter) => (
                 <div key={letter}>
-                  <div className="flex gap-5 lg:gap-10 items-center mt-10">
-                    <h2 className="text-[24px] lg:text-[40px] font-bold text-[#777777]">{letter}</h2>
-                    <div className="h-[1px] w-full bg-[#777777]"></div>
+                  <div className="flex gap-5 lg:gap-10 items-center mt-16">
+                    <h2 className="text-[24px] lg:text-[40px] font-bold text-[#777777]">
+                      {letter}
+                    </h2>
+                    <div className="h-[1px] opacity-[20%] w-full bg-[#777777]"></div>
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-2 lg:gap-5">
                     {groupedFoods[letter].map((food) => {
-                      const { Name, Youtube, Category, Description, Image, Demography } = food.fields;
+                      const {
+                        Name,
+                        Youtube,
+                        Category,
+                        Description,
+                        Image,
+                        Demography,
+                      } = food.fields;
 
                       return (
                         <FoodCard
@@ -106,7 +115,14 @@ const FoodArchive = ({ searchQuery }) => {
           {!isSorted && (
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-5">
               {filteredFoods.map((food) => {
-                const { Name, Youtube, Category, Description, Image, Demography } = food.fields;
+                const {
+                  Name,
+                  Youtube,
+                  Category,
+                  Description,
+                  Image,
+                  Demography,
+                } = food.fields;
 
                 return (
                   <FoodCard

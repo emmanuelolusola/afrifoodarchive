@@ -21,12 +21,11 @@ const Home = () => {
   return (
     <div>
       <NavBar />
-      <div className="px-[20px] md:px-[150px] ">
+      <div className="px-[20px] md:px-[150px]">
         <Header />
         <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         <FoodArchive searchQuery={searchQuery} />
       </div>
-      
     </div>
   );
 };
