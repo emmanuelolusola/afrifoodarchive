@@ -2,21 +2,15 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background-color: #ffffc5;
   font-family: "Inter", serif;
-  /* padding-left: 150px;
-  padding-right: 150px; */
   padding-top: 50px;
 }
-
-/* @media (max-width: 768px) {
-  body {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 25px;
-  }
-} */
 
 .custom-input {
   border-top: none;
