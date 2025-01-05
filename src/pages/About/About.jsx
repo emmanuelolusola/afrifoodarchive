@@ -1,6 +1,7 @@
 import NavBar from "../../components/NavBar/NavBar"
 import sola from '../../assets/Frame 49.png'
 import juwon from '../../assets/Frame 49 2.png'
+import Footer from "../../components/Footer/Footer"
 
 const About = () => {
   return (
@@ -35,6 +36,10 @@ const About = () => {
           
          
         </div>
+      </div>
+      
+      <div className="text-center py-5 text-[10px] lg:text-[14px]">
+        <Footer />
       </div>
       
     </div>
