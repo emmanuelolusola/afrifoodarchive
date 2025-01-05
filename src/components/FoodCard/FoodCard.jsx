@@ -9,6 +9,7 @@ const FoodCard = ({
   description,
   image,
   demography,
+  onView
 }) => {
   const [isHeartFilled, setIsHeartFilled] = useState(false);
 
@@ -44,7 +45,7 @@ const FoodCard = ({
             />
           )}
 
-          <button className="bg-[#FF0800] text-[#FFF157] px-3 md:px-6 text-[10px] md:text-sm py-0 lg:py-1 rounded-3xl">
+          <button onClick={onView} className="bg-[#FF0800] text-[#FFF157] px-3 md:px-6 text-[10px] md:text-sm py-0 lg:py-1 rounded-3xl">
             View
           </button>
         </div>
