@@ -9,7 +9,7 @@ const FoodArchive = ({ searchQuery }) => {
   const [foods, setFoods] = useState([]);
   const [error, setError] = useState(null);
   const [isSorted, setIsSorted] = useState(false);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
   const [selectedFood, setSelectedFood] = useState(null);
 
   useEffect(() => {
@@ -68,7 +68,6 @@ const FoodArchive = ({ searchQuery }) => {
 
   return (
     <div className="relative">
-      {/* Apply blur when modal is open */}
       <div className={`${selectedFood ? "blur-sm" : ""} transition-all duration-300`}>
         <Filter onSortToggle={handleSortToggle} isSorted={isSorted} />
 
@@ -80,36 +79,34 @@ const FoodArchive = ({ searchQuery }) => {
           </div>
         ) : (
           <div className="p-0">
-            {isSorted && (
-              <>
-                {Object.keys(groupedFoods).map((letter) => (
-                  <div key={letter}>
-                    <div className="flex gap-5 lg:gap-10 items-center mt-10">
-                      <h2 className="text-[24px] lg:text-[40px] font-bold text-[#777777]">{letter}</h2>
-                      <div className="h-[1px] w-full bg-[#777777]"></div>
-                    </div>
-                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-2 lg:gap-5">
-                      {groupedFoods[letter].map((food) => {
-                        const { Name, Youtube, Category, Description, Image, Demography } = food.fields;
-
-                        return (
-                          <FoodCard
-                            key={food.id}
-                            name={Name || "No Name Available"}
-                            youtube={Youtube || "#"}
-                            category={Category || "Uncategorized"}
-                            description={Description || "No description provided"}
-                            image={Image?.[0]?.url || "/placeholder.jpg"}
-                            demography={Demography || "Not specified"}
-                          />
-                        );
-                      })}
-                    </div>
+            {isSorted ? (
+              Object.keys(groupedFoods).map((letter) => (
+                <div key={letter}>
+                  <div className="flex gap-5 lg:gap-10 items-center mt-10">
+                    <h2 className="text-[24px] lg:text-[40px] font-bold text-[#777777]">{letter}</h2>
+                    <div className="h-[1px] w-full bg-[#777777]"></div>
                   </div>
-                ))}
-              </>
-            )}
-            {!isSorted && (
+                  <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-2 lg:gap-5">
+                    {groupedFoods[letter].map((food) => {
+                      const { Name, Youtube, Category, Description, Image, Demography } = food.fields;
+
+                      return (
+                        <FoodCard
+                          key={food.id}
+                          name={Name || "No Name Available"}
+                          youtube={Youtube || "#"}
+                          category={Category || "Uncategorized"}
+                          description={Description || "No description provided"}
+                          image={Image?.[0]?.url || "/placeholder.jpg"}
+                          demography={Demography || "Not specified"}
+                          onView={() => handleFoodSelect(food)}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              ))
+            ) : (
               <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-5">
                 {filteredFoods.map((food) => {
                   const { Name, Youtube, Category, Description, Image, Demography } = food.fields;
