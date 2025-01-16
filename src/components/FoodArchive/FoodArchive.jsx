@@ -21,7 +21,7 @@ const FoodArchive = ({ searchQuery }) => {
   // Check if screen is mobile
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    handleResize(); // Check on mount
+    handleResize(); 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -152,7 +152,7 @@ const FoodArchive = ({ searchQuery }) => {
         open={isDrawerOpen}
         onClose={handleDrawerClose}
         direction="bottom"
-        size={560}
+        size='65%'
           className="w-full bg-[#FFDAA8]  overflow-y-auto rounded-t-3xl  border border-[#FF0800] overflow-hidden"
       >
         {selectedFood && (
@@ -177,7 +177,7 @@ const FoodArchive = ({ searchQuery }) => {
               </div>
               <div className="flex justify-between items-center">
                 <button
-                  className="text-[#FFF157] font-semibold text-[18px] bg-[#FF0800] py-1 px-5 rounded-3xl"
+                  className="text-[#FFF157] font-semibold text-[12px] bg-[#FF0800] py-1 px-5 rounded-3xl"
                   onClick={() => window.open(selectedFood.fields.Youtube, "_blank")}
                 >
                   Learn how to make
@@ -185,14 +185,14 @@ const FoodArchive = ({ searchQuery }) => {
                 <div>
                   {isHeartFilled ? (
                     <FaHeart
-                      className="w-[25px] h-[25px]"
+                      className="w-[22px] h-[22px]"
                       color="#FF0800"
                       onClick={toggleHeart}
                       style={{ cursor: "pointer" }}
                     />
                   ) : (
                     <FaRegHeart
-                      className="w-[25px] h-[25px]"
+                      className="w-[22px] h-[22px]"
                       color="#FF0800"
                       onClick={toggleHeart}
                       style={{ cursor: "pointer" }}
