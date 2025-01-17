@@ -19,9 +19,9 @@ const FoodCard = ({
 
   return (
     <div className="cursor-pointer h-[250px] md:h-[320px] mt-4 flex flex-col gap-0 text-sm border p-0 border-[#FF0800] w-[100%] md:w-[100%] rounded-xl overflow-hidden">
-      <div className="relative group h-[65%] w-full">
+      <div className="relative group h-[65%] w-full"  onClick={onView}>
         <img className="h-full w-full object-cover" src={image} alt={name} />
-        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" >
           <p className="text-white text-lg">{name}</p>
         </div>
       </div>

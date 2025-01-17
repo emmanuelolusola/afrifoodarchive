@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Drawer from "react-modern-drawer";
-import "react-modern-drawer/dist/index.css"; // Import the styles
+import "react-modern-drawer/dist/index.css";
 import base from "../../api/base";
 import FoodCard from "../../components/FoodCard/FoodCard";
 import Filter from "../../components/filter/Filter";
@@ -42,6 +42,14 @@ const FoodArchive = ({ searchQuery }) => {
 
     fetchData();
   }, []);
+
+  // Disable scrolling when modal or drawer is open
+  useEffect(() => {
+    document.body.style.overflow = selectedFood || isDrawerOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto"; // Cleanup on unmount
+    };
+  }, [selectedFood, isDrawerOpen]);
 
   const handleSortToggle = () => {
     setIsSorted((prev) => !prev);
@@ -152,7 +160,7 @@ const FoodArchive = ({ searchQuery }) => {
         open={isDrawerOpen}
         onClose={handleDrawerClose}
         direction="bottom"
-        size='65%'
+        size='75%'
           className="w-full bg-[#FFDAA8]  overflow-y-auto rounded-t-3xl  border border-[#FF0800] overflow-hidden"
       >
         {selectedFood && (
@@ -172,12 +180,12 @@ const FoodArchive = ({ searchQuery }) => {
                   {selectedFood.fields.Demography || "Not specified"}
                 </p>
               </div>
-              <div className="py-3 text-[14px] overflow-y-auto" style={{ maxHeight: "450px" }}>
+              <div className="py-3 text-[14px] " style={{ maxHeight: "450px", overflow: 'hidden' }}>
                 {selectedFood.fields.Description || "No description available."}
               </div>
               <div className="flex justify-between items-center">
                 <button
-                  className="text-[#FFF157] font-semibold text-[12px] bg-[#FF0800] py-1 px-5 rounded-3xl"
+                  className="text-[#FFF157] font-semibold text-[14px] bg-[#FF0800] py-2 px-5 rounded-3xl"
                   onClick={() => window.open(selectedFood.fields.Youtube, "_blank")}
                 >
                   Learn how to make

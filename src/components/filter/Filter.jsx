@@ -30,7 +30,7 @@ const Filter = ({ onSortToggle, isSorted }) => {
       <div className="w-full mt-4 lg:mt-8 flex justify-between items-center">
         <div className="flex gap-2 lg:gap-4 items-center">
           <div className="flex gap-2 items-center">
-            <img src={filterIcon} alt="" />
+            <img src={filterIcon} alt="" className="hidden lg:block" />
             <p className="hidden lg:block text-[24px]">Filter by:</p>
           </div>
           <div className="flex gap-2">
