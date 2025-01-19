@@ -172,7 +172,7 @@ const FoodArchive = ({ searchQuery }) => {
                   {selectedFood.fields.Demography || "Not specified"}
                 </p>
               </div>
-              <div className="py-3 text-[14px] overflow-y-auto" style={{ maxHeight: "450px" }}>
+              <div className="py-3 text-[14px] text-justify overflow-y-auto" style={{ maxHeight: "450px" }}>
                 {selectedFood.fields.Description || "No description available."}
               </div>
               <div className="flex justify-between items-center">

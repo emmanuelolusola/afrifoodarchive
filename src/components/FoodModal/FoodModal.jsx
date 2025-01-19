@@ -33,7 +33,7 @@ const FoodModal = ({ food, onClose }) => {
           </div>
         </div>
         <div
-          className="py-3 text-[14px] overflow-y-auto"
+          className="py-3 pl-[10px] text-[14px] text-justify overflow-y-auto"
           style={{ maxHeight: "450px" }} 
         >
           {Description || "No description available."}
