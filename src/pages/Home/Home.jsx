@@ -19,7 +19,7 @@ const Home = () => {
   }, [searchQuery, setSearchParams]);
 
   return (
-    <div>
+    <div className="pb-10">
       <NavBar />
       <div className="px-[20px] md:px-[80px] lg:px-[150px]">
         <Header />
